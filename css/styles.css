@@ -9,8 +9,9 @@ body,td,th,p{
 }
 body {
 	background-color: #fdfdfd;
-	margin: 0;
+	margin: auto;
 	position:relative;
+	width: 100%;
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -131,6 +132,8 @@ nav h1 a {
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
+	display: grid;
+	grid-template-columns: auto auto auto;
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: 0;
@@ -258,7 +261,7 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -272,4 +275,140 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* ====================== Responsive Computer ====================== */
+
+
+@media screen and (max-width: 1120px) and (min-width: 750px) {
+	#restaurants-list {
+		grid-template-columns: auto auto;
+
+	}
+}
+
+@media screen and (max-width: 750px) {
+	#restaurants-list {
+		grid-template-columns: auto;
+	}
+
+	#restaurants-list li {
+		width: 70%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+}
+
+@media screen and (max-width: 445px) {
+	.filter-options select {
+		width: 40%;
+		padding-right: auto;
+		padding-left: auto;
+	}
+}
+
+/* ====================== Review Page ====================== */
+
+@media screen and (max-width: 750px) {
+	.inside #map-container {
+	  width: 100%;
+		position: static;
+		height: 400px;
+		padding-top: 130px;
+	}
+
+	.inside header {
+		position: fixed;
+	}
+
+	.leaflet-control-container {
+		position: absolute;
+	}
+
+	#breadcrumb {
+		width: auto;
+
+	}
+
+	#restaurant-container {
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 0;
+		width: auto;
+	}
+
+	#restaurant-img {
+		border-radius: 30px 0px;
+
+	}
+
+	#reviews-container {
+		margin-left: auto;
+		margin-right: auto;
+		width: auto;
+	}
+
+	#reviews-list li {
+		border-radius: 30px 0px;
+	}
+
+  #reviewName {
+		font-size: 30px;
+	}
+
+	#reviewDate {
+		text-align: right;
+	}
+
+	#reviewRating {
+		background-color: #f18200;
+		display: inline;
+		color: white;
+		font-size: 15px;
+		border-radius: 3px;
+	}
+
+	#reviewComments {
+		color: grey;
+		padding-top: 5px;
+	}
+
+	.inside #footer {
+		width: auto;
+	}
+
+	@media screen and (min-width: 473px){
+		.inside #footer {
+			width: 90%;
+		}
+	}
+}
+
+
+/* ====================== Responsive Mobile ====================== */
+
+@media screen and (max-width: 415px) {
+	#restaurants-list {
+		grid-template-columns: auto;
+	}
+
+	#restaurants-list li {
+		width: auto;
+		margin-right: auto;
+		margin-left: auto;
+		border-radius: 10%;
+		text-align: center;
+	}
+
+	#restaurants-list li .address {
+		display: none;
+	}
+
+	#restaurants-list li .restaurant-img {
+		border-radius: 40%;
+		margin-top: 5px;
+	}
+}
+
 }
