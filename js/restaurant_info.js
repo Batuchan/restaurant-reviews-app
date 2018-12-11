@@ -89,7 +89,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = "Restaurant Image";
+  image.alt = restaurant.name;
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -203,7 +203,7 @@ getParameterByName = (name, url) => {
  */
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/js/sw/sw.js').then(function(registration) {
+  navigator.serviceWorker.register('/sw.js').then(function(registration) {
     // Registration was successful
     console.log('ServiceWorker registration successful!');
   }, function(err) {
